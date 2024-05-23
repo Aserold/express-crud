@@ -1,8 +1,3 @@
-const requestLogger = (req, res, next) => {
-  console.log(`${req.method} request on endpoint "${req.path}"`);
-  next();
-};
-
 const validate = (schema) => (req, res, next) => {
   const { error } = schema.validate(req.body, { abortEarly: false });
   if (error) {
@@ -13,5 +8,4 @@ const validate = (schema) => (req, res, next) => {
   next();
 };
 
-exports.requestLogger = requestLogger;
 exports.validate = validate;

@@ -1,4 +1,4 @@
-const db = require('./database');
+const db = require('../db/database');
 
 exports.createUser = (req, res) => {
   const { name, age } = req.body;
